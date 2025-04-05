@@ -1,6 +1,5 @@
 # FPGA-Squadron-mini
     module top (
-    // Outputs
     output wire led_red,   // Red
     output wire led_blue,  // Blue
     output wire led_green, // Green
