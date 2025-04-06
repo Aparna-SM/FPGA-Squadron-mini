@@ -1,4 +1,4 @@
-# FPGA-Squadron-mini
+# FPGA-Squadron-mini-TASK 1
     module top (
     output wire led_red,   // Red
     output wire led_blue,  // Blue
