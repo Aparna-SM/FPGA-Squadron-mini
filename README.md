@@ -17,6 +17,20 @@ Input is hw_clk, Outputs are led_red,led_blue,led_green and testwire
  * CLKHFPU = 1'b1 : Enables power-up
  * CLKHFEN = 1'b1 : Enables oscillator
  * CLKHF : Output connected to internal oscillator signal
+
 **2. Frequency Counter Logic**
-   
+ * 28-bit register (frequency_counter_i)
+ *  Increments on every positive edge
+ *  Bit 5 is routed to testwire for monitoring
+ *  Provides a way to verify oscillator operation and timing
+
+**3. RGB LED**
+ * RGBLEDEN = 1'b1 : Enables LED
+ * RGB0PWM = 1'b0 : Red LED minimum brightness
+ * RGB1PWM = 1'b0 : Green LED minimum brightness
+ * RGB2PWM = 1'b1 : Blue LED maximum brightness
+ * All LEDs are set to minimum current
+ * RGB0 - led_red
+ * RGB1 - led_green
+ * RGB2 - led_blue
 
