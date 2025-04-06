@@ -42,4 +42,10 @@ Input is hw_clk, Outputs are led_red,led_blue,led_green and testwire
  * testwire - For debugging - PIN.no 17
 
 # Build and Flash the code
+    make clear
+    make build 
+    sudo make flash
+
+# OUTPUT
+
 
