@@ -34,3 +34,12 @@ Input is hw_clk, Outputs are led_red,led_blue,led_green and testwire
  * RGB1 - led_green
  * RGB2 - led_blue
 
+# PIN ASSIGNMENTS
+ * led_red - LED red output - PIN.no 39
+ * led_green - LED green output - PIN.no 40
+ * led_blue - LED blue output - PIN.no 41
+ * hw_clk - External hardware clock - PIN.no 20
+ * testwire - For debugging - PIN.no 17
+
+# Build and Flash the code
+
