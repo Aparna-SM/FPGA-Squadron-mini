@@ -141,7 +141,7 @@ Any data sent on uarttx is instantly received on uartrx.
 This eliminates the need for external connections during testing.
 
 # Block diagram 
-
+![image](https://github.com/user-attachments/assets/ce9e3369-8649-40f4-9190-2fd7df71e238)
 
 
 
