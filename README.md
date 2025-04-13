@@ -152,6 +152,8 @@ This eliminates the need for external connections during testing.
     sudo make flash
     sudo picocom -b 9600 /dev/ttyUSB0 --echo
 if any error try using 
+
+
     sudo make flash
     sudo apt install picocom
     sudo picocom -b 9600 /dev/ttyUSB0 --echo
