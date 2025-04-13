@@ -136,4 +136,24 @@ bits_sent-Tracks how many bits have been transmitted.
 * state is set to STATE_IDLE
 
 
+    assign uarttx = uartrx;
+Any data sent on uarttx is instantly received on uartrx.
+This eliminates the need for external connections during testing.
 
+# Block diagram 
+
+
+
+
+# Testing and Output
+    git clone https://github.com/Skandakm29/VsdSquadron_mini_fpga_uart_loopback.git
+    cd "VsdSquadron_mini_fpga_uart_loopback"
+    make build
+    sudo make flash
+    sudo picocom -b 9600 /dev/ttyUSB0 --echo
+if any error try using 
+    sudo make flash
+    sudo apt install picocom
+    sudo picocom -b 9600 /dev/ttyUSB0 --echo
+
+# OUTPUT
