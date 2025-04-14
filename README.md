@@ -259,6 +259,26 @@ tx_out: Carries the UART-encoded serial data to external devices.
 
 https://github.com/user-attachments/assets/44201ac3-9aca-43dd-91ca-6701c201627f
 
+## PROJECT 
+# Real time data acquistion and Tx system
+This document details the complete architecture of a real-time system for acquiring sensor data and transmitting it, implemented on an FPGA. The system focuses on measuring distance using an HC-SR04 ultrasonic sensor. The FPGA processes the sensor signals and subsequently communicates the calculated distance to a computer via a UART interface. This report encompasses system specifications, circuit diagrams, commented Verilog code for each module, testing methodologies, and a video demonstration of the system in operation.
+
+
+The described system comprises several interconnected functional blocks:
+
+* A 12 MHz internal oscillator integrated within the FPGA serves as the primary clock signal for the entire system.
+* A dedicated timing unit is responsible for generating periodic trigger signals for the distance measurement, with selectable intervals such as 50 ms or 250 ms.
+* An ultrasonic sensor module, implemented in Verilog (hc_sr04.v), produces a 10 µs trigger pulse and determines the distance based on the time it takes for the echo to return.
+* A UART transmitter module (uart_tx_8n1.v) manages the serial communication, transmitting the computed distance in ASCII character format at a data rate of 9600 bits per second.
+* Optional RGB LEDs can provide a visual indication of the system's operational state. The top-level Verilog design integrates all the individual modules. It stores the obtained distance value, transforms it into its ASCII representation, and facilitates its transmission to a personal computer through a USB-to-Serial converter.
+
+# Block diagram 
+
+
+
+# OUTPUT
+
+https://github.com/user-attachments/assets/38786079-7456-45ee-bc37-dc5c43562988
 
 
 
