@@ -160,3 +160,6 @@ if any error try using
     sudo picocom -b 9600 /dev/ttyUSB0 --echo
 
 # OUTPUT
+
+https://github.com/user-attachments/assets/f9d19156-f0ae-422e-94af-69727f810e89
+
