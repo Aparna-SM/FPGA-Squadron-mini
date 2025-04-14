@@ -226,6 +226,10 @@ Returns to STATE_IDLE.
 
 https://github.com/user-attachments/assets/ccb3a8d5-523c-4f3c-a356-e8fa778bce03
 
+## Task 4
+# Architecture Summary 
+
+
 
 
 
