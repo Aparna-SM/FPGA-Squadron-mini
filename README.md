@@ -48,6 +48,7 @@ Input is hw_clk, Outputs are led_red,led_blue,led_green and testwire
 
 # OUTPUT
 
+https://github.com/user-attachments/assets/916b014a-0b85-4969-92d7-a43dfc03b5dd
 
 
 ## Task 2 
