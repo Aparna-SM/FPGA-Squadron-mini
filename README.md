@@ -228,6 +228,37 @@ https://github.com/user-attachments/assets/ccb3a8d5-523c-4f3c-a356-e8fa778bce03
 
 ## Task 4
 # Architecture Summary 
+ The core components of this architecture are:
+
+Sensor Data Processing
+
+Baud Clock Creation
+
+UART Data Transfer Mechanism
+
+State Machine for Transmission Control
+# Workflow
+ Sensor readings are captured at specific time intervals. The data_valid signal flags when new data is ready to be sent. A 32-bit buffer temporarily stores sensor values before transmission.A baud rate generator ensures a consistent 9600 baud frequency. A counter mechanism regulates accurate timing for each bit.
+
+ * START BIT: Transmission begins with a low (0) start bit.
+ * DATA BITS: Sends 8-bit segments of the 32-bit sensor data sequentially.
+ * STOP BIT: Ends with a high (1) stop bit to complete the data frame.
+tx_done indicates the end of a transmission cycle.
+
+ready ensures the module can handle back-to-back sensor data without loss.
+
+tx_out: Carries the UART-encoded serial data to external devices.
+
+# Blockdiagram 
+
+
+
+
+
+# Output 
+
+https://github.com/user-attachments/assets/44201ac3-9aca-43dd-91ca-6701c201627f
+
 
 
 
