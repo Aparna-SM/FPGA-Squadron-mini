@@ -163,3 +163,69 @@ if any error try using
 
 https://github.com/user-attachments/assets/f9d19156-f0ae-422e-94af-69727f810e89
 
+## Task 3
+# UART Transmit module 
+This module implements an 8N1 UART Transmitter, enabling serial data transmission using an 8-bit data frame, no parity bit, and 1 stop
+bit. It generates a 9600 baud clock from a 12 MHz oscillator and provides a simple state-machine-based transmission mechanism.
+
+* Internal Oscillator - Generates the main clock signal (clk_out).
+* Frequency Counter - Uses clk_out to count the frequency and displays it,helps verify your oscillator output or system clock stability.
+* UART Transmission: The UART transmitter (uart_tx_8n1) continuously sends the character 'D' using an 8N1 format (8 data bits, No parity, 1 stop bit).
+* Baud Rate Generator - Converts the main clock into a baud_clk (e.g., 9600 Hz for UART communication).
+* UART Receiver (RX) - Captures serial data from PC
+* UART Loopback - Sends back the received data directly to UART TX (echo test).
+* RGB LED Controller - Takes parallel data from UART RX.
+
+# State Machine States 
+# IDLE STATE (STATE_IDLE)
+
+If senddata = 1 and the state is STATE_IDLE, it:
+
+Moves to the STATE_STARTTX state.
+
+Loads txbyte (8-bit data to transmit) into buf_tx.
+
+Clears txdone (indicates transmission is ongoing).
+
+Otherwise, if still in STATE_IDLE, it:
+
+Keeps txbit high (1) because UART idles at high.
+
+Ensures txdone remains low (0).
+
+* Start Bit Transmission (STATE_STARTTX)
+  Once in STATE_STARTTX, it:
+  Sets txbit low (0) (start bit in UART communication).
+  Moves to STATE_TXING to transmit data bits.
+  
+* Sending Data Bits (STATE_TXING)
+
+If state == STATE_TXING and bits_sent < 8, it:
+Sends the Least Significant Bit (LSB) of buf_tx.
+Shifts buf_tx right (>> 1).
+Increments bits_sent.
+
+* Stop Bit Transmission (STATE_TXDONE)
+
+After 8 data bits are transmitted, it:
+Sends the stop bit (1).
+Resets bits_sent to 0.
+Moves to STATE_TXDONE.
+
+* Transmission Complete (STATE_TXDONE → STATE_IDLE)
+
+In STATE_TXDONE, it:
+Sets txdone = 1 (indicates transmission complete).
+Returns to STATE_IDLE.
+
+# Block diagram 
+
+
+
+# OUTPUT
+
+https://github.com/user-attachments/assets/ccb3a8d5-523c-4f3c-a356-e8fa778bce03
+
+
+
+
