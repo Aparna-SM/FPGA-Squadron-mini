@@ -251,6 +251,7 @@ ready ensures the module can handle back-to-back sensor data without loss.
 tx_out: Carries the UART-encoded serial data to external devices.
 
 # Blockdiagram 
+![image](https://github.com/user-attachments/assets/61f39bd9-84fd-4651-afd9-397b5799c704)
 
 
 
