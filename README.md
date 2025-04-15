@@ -466,9 +466,7 @@ The described system comprises several interconnected functional blocks:
 
     endmodule
 
-    //===================================================================
-    // 2) Refresher for ~50ms or ~250ms pulses
-    //===================================================================
+    
     module refresher250ms(
     input  clk,  // 12MHz
     input  en,
