@@ -219,6 +219,7 @@ Sets txdone = 1 (indicates transmission complete).
 Returns to STATE_IDLE.
 
 # Block diagram 
+![image](https://github.com/user-attachments/assets/a406b90e-ee7e-4684-8a95-1e74b9ca078e)
 
 
 
