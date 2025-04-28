@@ -274,10 +274,10 @@ The described system comprises several interconnected functional blocks:
 * A UART transmitter module (uart_tx_8n1.v) manages the serial communication, transmitting the computed distance in ASCII character format at a data rate of 9600 bits per second.
 * Optional RGB LEDs can provide a visual indication of the system's operational state. The top-level Verilog design integrates all the individual modules. It stores the obtained distance value, transforms it into its ASCII representation, and facilitates its transmission to a personal computer through a USB-to-Serial converter.
 
-# Block diagram 
 
 
-# Circuit diagram
+
+
 
 
 # Uart Tx 
